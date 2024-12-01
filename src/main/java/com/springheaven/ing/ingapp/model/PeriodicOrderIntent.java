@@ -9,7 +9,7 @@ import java.time.LocalDate;
 @Data
 @Getter
 @Setter
-@NoArgsConstructor
+@Builder
 public class PeriodicOrderIntent {
 
 

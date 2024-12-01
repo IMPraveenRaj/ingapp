@@ -21,11 +21,18 @@ class PeriodicDepositHelperTest {
     void setUp() {
         periodicDepositHelper = new PeriodicDepositHelper();
     }
+    private PeriodicOrderIntent createOrder(BigDecimal amount, Frequency frequency, LocalDate startDate) {
 
+        return PeriodicOrderIntent.builder().
+                amount(amount).
+                startDate(startDate).
+                Frequency(frequency).
+                build();
+    }
     @Test
     void testCalcCurrentYearPeriodicDepositAmount_DailyFrequency() {
         // Given
-        PeriodicOrderIntent intent = new PeriodicOrderIntent();
+        PeriodicOrderIntent intent = PeriodicOrderIntent.builder().build();
         intent.setAmount(BigDecimal.valueOf(1020)); // Total amount
         intent.setFrequency(Frequency.DAILY);
         intent.setStartDate(LocalDate.of(2024, 1, 1)); // Start date
@@ -41,7 +48,7 @@ class PeriodicDepositHelperTest {
     @Test
     void testCalcCurrentYearPeriodicDepositAmount_WeeklyFrequency() {
         // Given
-        PeriodicOrderIntent intent = new PeriodicOrderIntent();
+        PeriodicOrderIntent intent =PeriodicOrderIntent.builder().build();
         intent.setAmount(BigDecimal.valueOf(520)); // Total amount
         intent.setFrequency(Frequency.WEEKLY);
         intent.setStartDate(LocalDate.of(2024, 1, 1)); // Start date
@@ -57,7 +64,7 @@ class PeriodicDepositHelperTest {
     @Test
     void testCalcCurrentYearPeriodicDepositAmount_MonthlyFrequency() {
         // Given
-        PeriodicOrderIntent intent = new PeriodicOrderIntent();
+        PeriodicOrderIntent intent =PeriodicOrderIntent.builder().build();
         intent.setAmount(BigDecimal.valueOf(120)); // Total amount
         intent.setFrequency(Frequency.MONTHLY);
         intent.setStartDate(LocalDate.of(2024, 1, 1)); // Start date
@@ -73,7 +80,7 @@ class PeriodicDepositHelperTest {
     @Test
     void testCalcCurrentYearPeriodicDepositAmount_QuarterlyFrequency() {
         // Given
-        PeriodicOrderIntent intent = new PeriodicOrderIntent();
+        PeriodicOrderIntent intent = PeriodicOrderIntent.builder().build();
         intent.setAmount(BigDecimal.valueOf(1020)); // Total amount
         intent.setFrequency(Frequency.QUARTERLY);
         intent.setStartDate(LocalDate.of(2024, 1, 1)); // Start date
@@ -89,7 +96,7 @@ class PeriodicDepositHelperTest {
     @Test
     void testCalcCurrentYearPeriodicDepositAmount_NullAmount() {
         // Given
-        PeriodicOrderIntent intent = new PeriodicOrderIntent();
+        PeriodicOrderIntent intent = PeriodicOrderIntent.builder().build();
         intent.setAmount(null);
         intent.setFrequency(Frequency.DAILY);
         intent.setStartDate(LocalDate.of(2024, 1, 1)); // Start date
@@ -104,7 +111,7 @@ class PeriodicDepositHelperTest {
     @Test
     void testCalcCurrentYearPeriodicDepositAmount_NullStartDate() {
         // Given
-        PeriodicOrderIntent intent = new PeriodicOrderIntent();
+        PeriodicOrderIntent intent =PeriodicOrderIntent.builder().build();
         intent.setAmount(BigDecimal.valueOf(3650));
         intent.setFrequency(Frequency.DAILY);
         intent.setStartDate(null); // Start date is null
@@ -119,7 +126,7 @@ class PeriodicDepositHelperTest {
     @Test
     void testCalcCurrentYearPeriodicDepositAmount_HalfYearlyFrequency() {
         // Given
-        PeriodicOrderIntent intent = new PeriodicOrderIntent();
+        PeriodicOrderIntent intent =PeriodicOrderIntent.builder().build();
         intent.setAmount(BigDecimal.valueOf(20));
         intent.setFrequency(Frequency.HALF_YEARLY);
         intent.setStartDate(LocalDate.of(2024, 7, 1)); // Start date
