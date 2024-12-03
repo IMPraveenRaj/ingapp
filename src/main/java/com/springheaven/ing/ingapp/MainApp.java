@@ -9,6 +9,8 @@ import javax.sound.midi.SysexMessage;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.time.temporal.IsoFields;
+import java.util.List;
+import java.util.function.Predicate;
 
 
 public class MainApp {
@@ -44,6 +46,11 @@ public class MainApp {
         System.out.println(Monthsbetween);
         long Days = calculateNumberOfDeposits(Frequency.QUARTERLY, startDate);
         System.out.println(Days);
+
+        List<String> names= List.of("praveenraj");
+        Predicate<String> praveenraj1 = name -> name.equals("praveenraj");
+        long praveenraj = names.stream().filter(praveenraj1).count();
+        System.out.println(praveenraj);
 
 
     }
