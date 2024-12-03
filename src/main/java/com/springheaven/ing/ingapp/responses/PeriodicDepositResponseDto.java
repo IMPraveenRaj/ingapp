@@ -90,7 +90,7 @@ public class PeriodicDepositResponseDto implements Serializable {
 
     @Valid
     @Schema(name="frequency",requiredMode = Schema.RequiredMode.NOT_REQUIRED)
-    @JsonProperty("mohanraj")
+    @JsonProperty("frequency")
     public FrequencyDTO getFrequency() {
         return frequency;
     }
@@ -102,7 +102,7 @@ public class PeriodicDepositResponseDto implements Serializable {
 
     @Valid
     @Schema(name="settings",requiredMode = Schema.RequiredMode.NOT_REQUIRED)
-    @JsonProperty("praveenraj")
+    @JsonProperty("settings")
     public PeriodicDepositSettingsSettingDTO getSettings() {
         return settings;
     }
