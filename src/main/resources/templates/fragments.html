@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<!-- Define a fragment called "htmlContent" -->
+<div th:fragment="htmlContent(documentType)">
+
+    <h1 style="margin-left: 10px;" th:text="#{in-use.starfund-change-plan.title}"></h1>
+    <br></br>
+    <div>
+        <h2 class="orange" th:text="#{in-use.starfund-change-plan.general-info.tile}"></h2>
+        <h3 class="orange personalDetailsHeader" th:text="#{in-use.starfund-change-plan.personal-details.title}"></h3>
+        <table class="personalDetails">
+            <tbody>
+            <tr>
+                <td style="width: 35%">
+                    <h3 th:text="#{in-use.starfund-change-plan.personal-details.name}"></h3>
+                </td>
+                <td th:text="#{in-use.starfund-change-plan.personal-details.investmentAccountName}"></td>
+            </tr>
+            <tr>
+                <td style="width: 35%">
+                    <h3 th:text="#{in-use.starfund-change-plan.personal-details.address}"></h3>
+                </td>
+                <td th:text="#{in-use.starfund-change-plan.personal-details.investmentAccountAddress}"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td th:text="#{in-use.starfund-change-plan.personal-details.investmentAccountAddressLine2}"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td th:text="#{in-use.starfund-change-plan.personal-details.investmentAccountAddress.country}"></td>
+
+            </tr>
+            <tr>
+                <td style="width: 35%">
+                    <h3  th:text="#{in-use.starfund-change-plan.personal-details.date-of-birth}"></h3>
+                </td>
+                <td th:text="#{in-use.starfund-change-plan.personal-details.date-of-birth_val}"></td>
+            </tr>
+            </tbody>
+        </table>
+        <div>
+            <h3 class="orange accountDetailsHeader" th:text="#{in-use.starfund-change-plan.account-details.title}"/>
+            <table class="accountDetails">
+                <tr>
+                    <td style="width: 35%">
+                        <h3 th:text="#{in-use.starfund-change-plan.account-details.starfundAccount}"></h3>
+                    </td>
+                    <td th:text="#{in-use.starfund-change-plan.account-details.starfundAccountNo}"></td>
+                </tr>
+                <tr>
+                    <td style="width: 35%" >
+                        <h3 th:text="#{in-use.starfund-change-plan.account-details.date-of-opening}"></h3>
+                    </td>
+                    <td th:text="#{in-use.starfund-change-plan.account-details.date-of-opening-val}"></td>
+                </tr>
+                <tr>
+                    <td style="width: 35%" >
+                        <h3 th:text="#{in-use.starfund-change-plan.account-details.starfund-type}"></h3>
+                    </td>
+                    <td th:if="${1==1 && 2==2}" th:text="#{in-use.starfund-change-plan.account-details.starfundAccount.instrumentDetail.name}"></td>
+                    <td th:if="${1!=1 && 2!=2}" th:text="#{in-use.starfund-change-plan.account-details.starfundAccount.instrumentDetail.none}"></td>
+                </tr>
+                <tr>
+                    <td style="width: 35%">
+                        <h3 th:text="#{in-use.starfund-change-plan.account-details.isin}"></h3>
+                    <td th:if="${1==1 && 2==2}" th:text="#{in-use.starfund-change-plan.account-details.isin-no}"></td>
+                    <td th:if="${1!=1 && 2!=2}" ></td>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 35%">
+                        <h3 th:text="#{in-use.starfund-change-plan.account-details.linked-ingAccount}"></h3>
+                    </td>
+                    <td th:text="#{in-use.starfund-change-plan.account-details.starfundAccount.ibanNumber}"></td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <h2 class="orange" th:text="#{in-use.starfund-change-plan.modification.title}"></h2>
+            <p th:text="#{in-use.starfund-change-plan.modification.line1}"></p>
+            <ul>
+                <li class="list__item" th:text="#{in-use.starfund-change-plan.modification.line2}"></li>
+                <li class="list__item" th:text="#{in-use.starfund-change-plan.modification.line3}"></li>
+            </ul>
+            <p th:text="#{in-use.starfund-change-plan.modification.line4}"/>
+            <br></br>
+            <table avoid-page-break-inside class="changePlanDetails">
+                <thead>
+                <tr>
+                    <th th:text="#{in-use.starfund-change-plan.tableHeader.topic}"></th>
+                    <th th:if="${1==1}"
+                        th:text="#{in-use.starfund-change-plan.tableHeader.changedon
+                        (${#dates.format(#dates.createNow(),#locale.language=='nl' ? 'dd/MM/yyy HH.mm.ss' : 'dd-MM-yyyy HH.mm.ss')})}"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td th:text="#{in-use.starfund-change-plan.tableHeader.endDateOfPeriodicPlan}"></td>
+                    <td class="changedValuetd" th:if="${1>=2}" th:text="#{in-use.starfund-change-plan.tableHeader.endDateOfPeriodicPlan-val}"></td>
+                    <td class="changedValuetd" th:if="${'NONE'=='NONE'}"
+                        th:text="${#dates.format(#dates.createNow(),#locale.language=='nl'? 'dd/MM/yyyy HH.mm.ss' : 'dd-MM-yyyy HH.mm.ss')}"></td>
+                </tr>
+                </tbody>
+
+
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,151 @@
+.link {
+    text-decoration: none;
+    border-bottom: 1px solid #525199;
+    color: #525199;
+}
+
+.link:visited {
+    color: #ab0066;
+    border-bottom-color: #ab0066;
+}
+
+.link:focus,
+.link:visited:focus {
+    border-radius: 4px;
+    box-shadow: 0 0 8px #9fcaea, 0 0 0 1px #559bd1;
+    outline: none;
+    border-bottom-color: transparent;
+}
+
+.link:hover {
+    background-color: #e6e5f0;
+}
+
+.link:visited:hover {
+    background-color: #f3dce9;
+}
+
+.link:active {
+    color: #525199;
+    border-bottom-color: transparent;
+    background-color: transparent;
+}
+
+.link:visited:active {
+    color: #ab0066;
+    border-bottom-color: transparent;
+    background-color: transparent;
+}
+
+/*
+Default size
+ */
+
+.list {
+    padding-left: 45px;
+    margin: 0;
+    box-sizing: content-box;
+    display: block;
+    float: none;
+    list-style: none;
+}
+
+.list__item {
+    font-family: INGMe, arial, helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 10px;
+    line-height: 15px;
+    margin: 0;
+    display: list-item;
+}
+
+.list__item::before {
+    width: 5px;
+    height: 5px;
+    margin-top: 6px;
+    margin-left: -21px;
+}
+
+.list--bullet > .list__item::before {
+    display: block;
+    content: " ";
+    position: absolute;
+    background: orange;
+}
+
+.list--bullet.list--nested > .list__item::before {
+    background: #767676;
+}
+
+table {
+    width: 99%;
+    margin-bottom: 24px;
+    border-collapse: collapse;
+}
+
+.changePlanDetails th,
+.changePlanDetails td {
+    width: 33% !important;
+    padding: 5px;
+    text-align: left !important;
+    border: solid 1px #777;
+}
+
+.personalDetails,
+.accountDetails {
+    margin-left: 50px !important;
+    padding: 5px;
+}
+
+.personalDetailsHeader,
+.accountDetailsHeader {
+    margin-left: 30px !important;
+}
+
+.textAlignRight {
+    text-align: right;
+}
+
+section.withBorderTop {
+    border-top: 3px solid lightgray;
+    padding-top: 5em;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 16px;
+    margin-left: 10px;
+    font-family: INGME, Arial, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: grayscale;
+    font-size: 48px;
+    line-height: 56px;
+    font-weight: bold;
+    color: #ff6200;
+}
+
+h1 {
+    margin-top: 10px;
+    margin-bottom: 8px;
+    font-family: INGME, Arial, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: grayscale;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: bold;
+    color: #ff6200;
+}
+
+h3.orange {
+    color: #ff6200 !important;
+    font-size: 12px !important;
+}
+
+.changedValuetd {
+    font-weight: bold;
+}
