@@ -1,15 +1,18 @@
 package com.springheaven.ing.ingapp.model;
 
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-
-@Data
+@SuperBuilder(toBuilder = true)
+@NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
 @Builder
+@ToString(callSuper = true)
 public class PeriodicOrderIntent {
 
 

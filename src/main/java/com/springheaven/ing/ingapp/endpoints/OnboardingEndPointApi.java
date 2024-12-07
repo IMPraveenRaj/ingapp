@@ -15,4 +15,14 @@ public interface OnboardingEndPointApi {
 
     )
     public ResponseEntity<PeriodicDepositResponseDto> getPeriodicDepositDetail();
+
+
+
+    @RequestMapping(
+            method = RequestMethod.GET,
+            value="/investment/onboarding/periodic-deposit-helper",
+            produces = {"application/json"}
+
+    )
+    public ResponseEntity<PeriodicDepositResponseDto> getPeriodicDepositDetailwithhelper();
 }
