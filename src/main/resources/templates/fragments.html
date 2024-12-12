@@ -97,11 +97,46 @@
                 </thead>
                 <tbody>
                 <tr>
-                    <td th:text="#{in-use.starfund-change-plan.tableHeader.endDateOfPeriodicPlan}"></td>
+                    <td class="changedValuetd" th:text="#{in-use.starfund-change-plan.tableHeader.endDateOfPeriodicPlan}"></td>
                     <td class="changedValuetd" th:if="${1>=2}" th:text="#{in-use.starfund-change-plan.tableHeader.endDateOfPeriodicPlan-val}"></td>
                     <td class="changedValuetd" th:if="${'NONE'=='NONE'}"
                         th:text="${#dates.format(#dates.createNow(),#locale.language=='nl'? 'dd/MM/yyyy HH.mm.ss' : 'dd-MM-yyyy HH.mm.ss')}"></td>
                 </tr>
+                <tr>
+                    <td  class="changedValuetd" th:text="#{in-use.starfund-change-plan.tableHeader.frequency}"></td>
+                    <td th:if="${'MONTHLY'=='MONTHLY'}" class="changedValuetd" th:text="'Monthly'"></td>
+                    <td th:if="${'QUARTERLY'=='QUARTERLYs'}" class=changedValuetd></td>
+                    <td th:if="${'YEARLY'=='YEARLYS'}" CLASS="changedValuetd"></td>
+                    <td th:if="${'NONE'=='NONEs'}"></td>
+                </tr>
+
+                <!--This Year-->
+                <tr>
+                    <td class="changedValuetd" th:text="#{in-use.starfund-change-plan.tableHeader.amountToinvestThisYear}"></td>
+                    <!--Changed Plan Parameters - This Year-->
+                    <td class="changedValuetd" th:if="${'MONTHLY'=='MONTHLYs'}"
+                    th:text="|#{in-use.starfund-change-plan.thisYearMonthlyLineFragment1
+                    (${#numbers.formatDecimal('1020', 0, 'DEFAULT',2, 'DEFAULT')})}
+                    #{in-use.starfund-change-plan.thisYearMonthlyLineFragment2} ${'25-dec-2024'}
+                    #{in-use.starfund-change-plan.thisYearMonthlyLineFragment3} ${#numbers.formatDecimal('1020', 0, 'DEFAULT',2, 'DEFAULT')}
+                    #{in-use.starfund-change-plan.thisYearMonthlyLineFragment4}|"></td>
+
+                    <td class="changedValuetd" th:if="${'QUARTERLY'=='QUARTERLYs'}"
+                        th:text="|#{in-use.starfund-change-plan.thisYearQuarterlyLineFragment1
+                    (${#numbers.formatDecimal('1020', 0, 'DEFAULT',2, 'DEFAULT')})}
+                    #{in-use.starfund-change-plan.thisYearQuarterlyLineFragment2} ${'25-dec-2024'}
+                    #{in-use.starfund-change-plan.thisYearQuarterlyLineFragment3} ${#numbers.formatDecimal('1020', 0, 'DEFAULT',2, 'DEFAULT')}
+                    #{in-use.starfund-change-plan.thisYearQuarterlyLineFragment4}|"></td>
+
+                    <td class="changedValuetd" th:if="${'YEARLY'=='YEARLYS'}"
+                        th:text="#{in-use.starfund-change-plan.thisYearYearlyLineFragment123(1020.00,${#numbers.formatDecimal('1020', 0, 'DEFAULT',2, 'DEFAULT')})}">
+                    </td>
+                    <td class="changedValuetd" th:if="${'NONE'=='NONE'}" th:text="NONE"> </td>
+                </tr>
+                <!--Changed Plan Parameters - Next Year-->
+                <!--<MONTLY>-->
+                <td class="changedValuetd" th:text="#{in-use.starfund-change-plan.tableHeader.amountToinvestNextYear}"></td>
+                 <td th:text="'Subsequent Yearss'"></td>
                 </tbody>
 
 
