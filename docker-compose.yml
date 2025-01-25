@@ -1,0 +1,26 @@
+version: '3.2'
+
+services:
+  oracle-databse:
+    image: gvenzl/oracle-xe
+    container_name: oracleDB
+    ports:
+      - "1521:1521"
+    environment:
+      - "TZ=${TZ}"
+      - "ORACLE_RANDOM_PASSWORD=yes"
+    volumes:
+      - oracle-data:/opt/oracle/oradata
+
+  tpa-clients-mock:
+    container_name: tpa-clients-mock
+    image: wiremock/wiremock:2.33.2
+    ports:
+      - 8089:8080
+    volumes:
+      - ./docker/tpa-clients-mock:/home/wiremock
+
+
+volumes:
+  oracle-data:
+    driver: local
