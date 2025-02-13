@@ -2,7 +2,12 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <body>
 <!-- Define a fragment called "htmlContent" -->
-<div th:fragment="htmlContent(documentType)">
+<div th:fragment="htmlContent(documentType, userDetails)">
+    <div th:if="${documentType == 'Invoice'}">
+        <p th:text="${documentType}">This is an Invoice document.</p>
+        <td><strong>Name</strong></td>
+        <td th:text="${userDetails.name}"></td>
+    </div>amvn
 
     <h1 style="margin-left: 10px;" th:text="#{in-use.starfund-change-plan.title}"></h1>
     <br></br>

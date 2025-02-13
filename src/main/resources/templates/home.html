@@ -10,6 +10,6 @@
 <body>
 <h1>Welcome!</h1>
 <!-- Replace this div with the fragment -->
-<div th:replace="fragments :: htmlContent(${documentType})"></div>
+<div th:replace="fragments :: htmlContent(${documentType}, ${userDetails})"></div>
 </body>
 </html>
